@@ -53,8 +53,8 @@ public class Game {
                 String nextRoll = scoring.substring(frame.getPosition() + 2, frame.getPosition() + 3);
                 points += frame.getBonus(nextRoll);
             } else if (frame.isStrike()) {
-                String nextRoll = scoring.substring(frame.getPosition() + 1, frame.getPosition() + 3);
-                points += frame.getBonus(nextRoll);
+                String nextRolls = scoring.substring(frame.getPosition() + 1, frame.getPosition() + 3);
+                points += frame.getBonus(nextRolls);
             }
         }
         return points;
