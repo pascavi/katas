@@ -4,8 +4,8 @@ public class Parrot {
 
     private ParrotTypeEnum type;
     protected int numberOfCoconuts = 0;
-    private double voltage;
-    private boolean isNailed;
+    protected double voltage;
+    protected boolean isNailed;
 
 
     public Parrot(ParrotTypeEnum _type, int numberOfCoconuts, double voltage, boolean isNailed) {
@@ -27,7 +27,7 @@ public class Parrot {
         throw new RuntimeException("Should be unreachable");
     }
 
-    private double getBaseSpeed(double voltage) {
+    protected double getBaseSpeed(double voltage) {
         return Math.min(24.0, voltage*getBaseSpeed());
     }
 
