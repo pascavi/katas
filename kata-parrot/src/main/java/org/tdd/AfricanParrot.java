@@ -6,8 +6,8 @@ package org.tdd;
 public class AfricanParrot extends Parrot {
     protected int numberOfCoconuts = 0;
 
-    public AfricanParrot(ParrotTypeEnum _type, int numberOfCoconuts, double voltage, boolean isNailed) {
-        super(ParrotTypeEnum.AFRICAN, voltage, isNailed);
+    public AfricanParrot(int numberOfCoconuts, double voltage, boolean isNailed) {
+        super(voltage, isNailed);
         this.numberOfCoconuts = numberOfCoconuts;
     }
 

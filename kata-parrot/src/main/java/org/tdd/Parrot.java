@@ -2,12 +2,10 @@ package org.tdd;
 
 public abstract class Parrot {
 
-    private ParrotTypeEnum type;
     protected double voltage;
     protected boolean isNailed;
 
-    public Parrot(ParrotTypeEnum _type, double voltage, boolean isNailed) {
-        this.type = _type;
+    public Parrot(double voltage, boolean isNailed) {
         this.voltage = voltage;
         this.isNailed = isNailed;
     }

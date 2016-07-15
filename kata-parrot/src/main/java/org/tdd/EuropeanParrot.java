@@ -4,8 +4,8 @@ package org.tdd;
  * Created by Pascual on 15/07/2016.
  */
 public class EuropeanParrot extends Parrot {
-    public EuropeanParrot(ParrotTypeEnum _type, double voltage, boolean isNailed) {
-        super(ParrotTypeEnum.EUROPEAN, voltage, isNailed);
+    public EuropeanParrot(double voltage, boolean isNailed) {
+        super(voltage, isNailed);
     }
 
     @Override
