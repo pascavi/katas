@@ -8,5 +8,4 @@ public abstract class Parrot {
         return 12.0;
     }
 
-
 }
