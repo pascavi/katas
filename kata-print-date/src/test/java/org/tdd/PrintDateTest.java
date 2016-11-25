@@ -5,10 +5,14 @@ import org.junit.Test;
 
 import java.io.*;
 
-public class PrintDateTest {
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
-    private class PrintStreamStub extends PrintStream {
-        PrintStreamStub(File dummy) throws FileNotFoundException {
+public class PrintDateTest {
+    private class PrintStreamMock extends PrintStream {
+        private boolean isPrintlnCalled = false;
+
+        PrintStreamMock(File dummy) throws FileNotFoundException {
             super(new OutputStream() {
                 @Override
                 public void write(int b) throws IOException {
@@ -19,13 +23,20 @@ public class PrintDateTest {
 
         public void println(Object input) {
             // Manual stub
+            isPrintlnCalled = true;
+        }
+
+        public boolean verify() {
+            return isPrintlnCalled;
         }
     }
 
+    PrintStreamMock outMock;
     PrintDate printDate;
     @Before
     public void setUp() throws Exception {
-        printDate = new PrintDate(new PrintStreamStub(null));
+        outMock = new PrintStreamMock(null);
+        printDate = new PrintDate(outMock);
     }
 
 
@@ -35,4 +46,9 @@ public class PrintDateTest {
     }
     // Prints Fri Nov 25 19:34:55 CET 2016
 
+    @Test
+    public void testPrintlnIsCalled() {
+        printDate.printCurrentDate();
+        assertThat(outMock.verify(), is(true));
+    }
 }
