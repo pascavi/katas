@@ -1,5 +1,6 @@
 package org.tdd;
 
+import java.io.PrintStream;
 import java.util.Date;
 
 /**
@@ -7,7 +8,13 @@ import java.util.Date;
  */
 public class PrintDate {
 
+    private PrintStream out;
+
+    PrintDate(PrintStream out) {
+        this.out = out;
+    }
+
     public void printCurrentDate() {
-        System.out.println(new Date());
+        this.out.println(new Date());
     }
 }
