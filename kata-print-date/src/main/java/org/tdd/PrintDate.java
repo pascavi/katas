@@ -9,12 +9,14 @@ import java.util.Date;
 public class PrintDate {
 
     private PrintStream out;
+    private Date date;
 
-    PrintDate(PrintStream out) {
+    PrintDate(PrintStream out, Date date) {
         this.out = out;
+        this.date = date;
     }
 
     public void printCurrentDate() {
-        this.out.println(new Date());
+        this.out.println(date.toString());
     }
 }
