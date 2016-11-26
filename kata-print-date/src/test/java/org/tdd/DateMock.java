@@ -1,11 +1,9 @@
 package org.tdd;
 
-import java.util.Date;
-
 /**
  * Created by Pascual on 26/11/2016.
  */
-class DateMock extends Date {
+class DateMock implements DateInterface{
 
     @Override
     public String toString() {

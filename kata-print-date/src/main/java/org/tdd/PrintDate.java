@@ -1,22 +1,25 @@
 package org.tdd;
 
-import java.io.PrintStream;
-import java.util.Date;
+interface OutInterface{
+    void println(String input);
+}
 
-/**
- * Created by Pascual on 28/05/2016.
- */
-public class PrintDate {
+interface DateInterface{
+    String toString();
+}
 
-    private PrintStream out;
-    private Date date;
 
-    PrintDate(PrintStream out, Date date) {
+class PrintDate {
+
+    private OutInterface out;
+    private DateInterface date;
+
+    PrintDate(OutInterface out, DateInterface date) {
         this.out = out;
         this.date = date;
     }
 
-    public void printCurrentDate() {
+    void printCurrentDate() {
         this.out.println(date.toString());
     }
 }
