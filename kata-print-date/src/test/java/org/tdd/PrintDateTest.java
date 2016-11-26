@@ -14,7 +14,7 @@ public class PrintDateTest {
     }
 
     @Test
-    public void pPrintlnIsCalled() throws Exception {
+    public void printlnIsCalled() throws Exception {
         PrintStreamMock outMock = new PrintStreamMock(null);
         PrintDate printDate = new PrintDate(outMock, new Date());
         printDate.printCurrentDate();
